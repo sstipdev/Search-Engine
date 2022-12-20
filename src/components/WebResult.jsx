@@ -8,8 +8,7 @@ const WebResult = ({ result }) => {
         }
         return (
           <div key={i}>
-            <h2>{info.contents}</h2>
-            <div>{info.datetime}</div>
+            <p dangerouslySetInnerHTML={{ __html: info.contents }}></p>
             <span>{info.url}</span>
           </div>
         );
