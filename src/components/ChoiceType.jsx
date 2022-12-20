@@ -1,8 +1,11 @@
 import { useState } from "react";
+import Logo from "../assets/logo.jpeg";
 import WebResult from "./WebResult";
 import VideoResult from "./VideoResult";
 import ImageResult from "./ImageResult";
 import BlogResult from "./BlogResult";
+
+import { ChoiceTypeBox, LogoImg, Header, UserForm, UserInput, SubmitBtn } from "../styles/\bChoiceTypeCSS";
 
 const ChoiceType = () => {
   const [choice, setChoice] = useState("");
@@ -35,11 +38,17 @@ const ChoiceType = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={(e) => searchResult(e)}>
-        <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="검색어를 기입해주세요" value={search} />
-        <button type="submit">제출</button>
-      </form>
+    <ChoiceTypeBox>
+      <Header>
+        <LogoImg src={Logo} />
+        <UserForm onSubmit={(e) => searchResult(e)} id="submit-info">
+          <UserInput onChange={(e) => setSearch(e.target.value)} type="text" placeholder="검색어를 기입해주세요" value={search} />
+        </UserForm>
+        <SubmitBtn type="submit" form="submit-info">
+          검색
+        </SubmitBtn>
+      </Header>
+
       <div>
         <div onClick={() => setChoice("web")}>웹 문서</div>
         <div onClick={() => setChoice("blog")}>블로그</div>
@@ -47,11 +56,13 @@ const ChoiceType = () => {
         <div onClick={() => setChoice("image")}>이미지</div>
       </div>
 
-      {choice === "web" && <WebResult result={result} />}
-      {choice === "vclip" && <VideoResult result={result} />}
-      {choice === "image" && <ImageResult result={result} />}
-      {choice === "blog" && <BlogResult result={result} />}
-    </div>
+      <div>
+        {choice === "web" && <WebResult result={result} />}
+        {choice === "vclip" && <VideoResult result={result} />}
+        {choice === "image" && <ImageResult result={result} />}
+        {choice === "blog" && <BlogResult result={result} />}
+      </div>
+    </ChoiceTypeBox>
   );
 };
 

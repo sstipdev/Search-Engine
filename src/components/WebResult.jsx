@@ -3,9 +3,6 @@ const WebResult = ({ result }) => {
     <div>
       <h3>여긴 웹 결과물</h3>
       {result.map((info, i) => {
-        {
-          console.log(info);
-        }
         return (
           <div key={i}>
             <p dangerouslySetInnerHTML={{ __html: info.contents }}></p>
