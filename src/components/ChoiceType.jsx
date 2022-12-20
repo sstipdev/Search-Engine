@@ -29,10 +29,10 @@ const ChoiceType = () => {
   return (
     <div>
       <div>
-        <div onClick={() => setChoice((prev) => "web")}>웹 문서</div>
-        <div onClick={() => setChoice((prev) => "vclip")}>동영상</div>
-        <div onClick={() => setChoice((prev) => "image")}>이미지</div>
-        <div onClick={() => setChoice((prev) => "blog")}>블로그</div>
+        <div onClick={() => setChoice("web")}>웹 문서</div>
+        <div onClick={() => setChoice("vclip")}>동영상</div>
+        <div onClick={() => setChoice("image")}>이미지</div>
+        <div onClick={() => setChoice("blog")}>블로그</div>
       </div>
       <form onSubmit={(e) => serachResult(e)}>
         <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="검색어를 기입해주세요" value={search} />
