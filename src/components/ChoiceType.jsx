@@ -17,7 +17,7 @@ const ChoiceType = () => {
   const GET_URL = `${HOST}/v2/search/${choice}?query=${search}`;
 
   const getApiData = async () => {
-    // Fetch를 통해 API랑 통신.
+    // Fetch를 통해 API랑 통신 및 promise 반환
     const data = await fetch(GET_URL, {
       method: "GET",
       headers: {
@@ -58,6 +58,7 @@ const ChoiceType = () => {
       </Header>
 
       <ChoiceBox>
+        {/* 클릭시 CSS 기능 추가 예정 */}
         <SearchType onClick={() => setChoice("web")}>🌐 웹 문서 🌐</SearchType>
         <SearchType onClick={() => setChoice("blog")}>📚 블로그 📚</SearchType>
         <SearchType onClick={() => setChoice("vclip")}>📽️ 동영상 📽️</SearchType>
