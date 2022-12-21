@@ -8,6 +8,7 @@ export const LogoImg = styled.img`
   width: 60px;
   height: 60px;
   border-radius: 30px;
+  border: 1px solid purple;
 `;
 
 export const Header = styled.div`
@@ -32,6 +33,10 @@ export const UserInput = styled.input`
   text-align: center;
   border-radius: 5px;
   border: 1px solid blue;
+  &:focus {
+    border: 1px solid green;
+    outline: none;
+  }
 `;
 
 export const SubmitBtn = styled.button`
@@ -44,10 +49,8 @@ export const ChoiceBox = styled.ul`
   width: 100%;
   display: flex;
   justify-content: space-around;
-  border-top 1px solid grey;
-  border-bottom: 1px solid grey;
   padding: 0;
-  margin-bottom:40px;
+  margin-bottom: 40px;
 `;
 
 export const SearchType = styled.li`
@@ -55,8 +58,11 @@ export const SearchType = styled.li`
   text-align: center;
   color: green;
   list-style: none;
-  padding: 20px;
+  padding: 15px;
   box-sizing: border-box;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 5px;
 `;
 
 export const MainResult = styled.div`

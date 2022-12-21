@@ -5,16 +5,35 @@ import VideoResult from "./VideoResult";
 import ImageResult from "./ImageResult";
 import BlogResult from "./BlogResult";
 
-import { ChoiceTypeBox, LogoImg, Header, UserForm, UserInput, SubmitBtn, ChoiceBox, SearchType, MainResult } from "../styles/\bChoiceTypeCSS";
+import { ChoiceTypeBox, LogoImg, Header, UserForm, UserInput, SubmitBtn, ChoiceBox, SearchType, MainResult } from "../styles/ChoiceTypeCSS";
 
 const ChoiceType = () => {
   const [choice, setChoice] = useState("");
   const [search, setSearch] = useState("");
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState();
 
   const API_KEY = import.meta.env.VITE_REACT_API_KEY;
   const HOST = "https://dapi.kakao.com";
   const GET_URL = `${HOST}/v2/search/${choice}?query=${search}`;
+
+  const getApiData = async () => {
+    // Fetch를 통해 API랑 통신.
+    const data = await fetch(GET_URL, {
+      method: "GET",
+      headers: {
+        Authorization: `KakaoAK ${API_KEY}`,
+      },
+    });
+
+    console.log(data);
+
+    // JSON으로 파일 변환.
+    const json = await data.json();
+    console.log(json);
+
+    // 변환된 JSON 객체를 State함수에 저장.
+    setResult(json.documents);
+  };
 
   const searchResult = async (e) => {
     e.preventDefault();
@@ -25,16 +44,7 @@ const ChoiceType = () => {
       setSearch("");
       return alert("검색 항목을 선택해주셔야 합니다 !");
     }
-
-    const data = await fetch(GET_URL, {
-      method: "GET",
-      headers: {
-        Authorization: `KakaoAK ${API_KEY}`,
-      },
-    });
-    const json = await data.json();
-    setResult(json.documents);
-    setSearch("");
+    getApiData();
   };
 
   return (
@@ -57,10 +67,10 @@ const ChoiceType = () => {
       </ChoiceBox>
 
       <MainResult>
-        {choice === "web" && <WebResult result={result} />}
-        {choice === "vclip" && <VideoResult result={result} />}
-        {choice === "image" && <ImageResult result={result} />}
-        {choice === "blog" && <BlogResult result={result} />}
+        {choice === "web" && result ? <WebResult result={result} /> : null}
+        {choice === "vclip" && result ? <VideoResult result={result} /> : null}
+        {choice === "image" && result ? <ImageResult result={result} /> : null}
+        {choice === "blog" && result ? <BlogResult result={result} /> : null}
       </MainResult>
     </ChoiceTypeBox>
   );

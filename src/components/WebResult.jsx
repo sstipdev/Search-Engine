@@ -1,16 +1,24 @@
+import { WebMain, WebTitle, WebData, WebContents, WebLink, WebShortCut } from "../styles/WebResultCSS";
+import { AiOutlineCheck } from "react-icons/ai";
+
 const WebResult = ({ result }) => {
   return (
-    <div>
-      <h3>여긴 웹 결과물</h3>
+    <WebMain>
+      <WebTitle>Web Api Data Results</WebTitle>
       {result.map((info, i) => {
         return (
-          <div key={i}>
-            <p dangerouslySetInnerHTML={{ __html: info.contents }}></p>
-            <span>{info.url}</span>
-          </div>
+          <WebData key={i}>
+            <WebContents dangerouslySetInnerHTML={{ __html: info.contents }}></WebContents>
+            <WebShortCut>
+              <WebLink href={info.url} target="_blank">
+                <AiOutlineCheck size="24" style={{ color: "green" }} />
+                바로가기
+              </WebLink>
+            </WebShortCut>
+          </WebData>
         );
       })}
-    </div>
+    </WebMain>
   );
 };
 
