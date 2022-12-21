@@ -19,6 +19,9 @@ export const Header = styled.div`
   padding: 30px;
   box-sizing: border-box;
   margin-bottom: 50px;
+  position: fixed;
+  top: 0;
+  background-color: white;
 `;
 
 export const UserForm = styled.form`
@@ -51,6 +54,9 @@ export const ChoiceBox = styled.ul`
   justify-content: space-around;
   padding: 0;
   margin-bottom: 40px;
+  position: fixed;
+  top: 100px;
+  background-color: white;
 `;
 
 export const SearchType = styled.li`
@@ -66,6 +72,6 @@ export const SearchType = styled.li`
 `;
 
 export const MainResult = styled.div`
-  padding: 30px;
+  padding: 200px 30px 30px 30px;
   box-sizing: border-box;
 `;
