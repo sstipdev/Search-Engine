@@ -3,7 +3,7 @@ import { VideoMain, VideoHeader, VideoTitle, VideoData, VideoUrl, VideoImg, Vide
 const VideoResult = ({ result }) => {
   return (
     <>
-      <VideoHeader style={{ textAlign: "center" }}>
+      <VideoHeader>
         <VideoTitle>📽️ 동영상 📽️</VideoTitle>
       </VideoHeader>
       <VideoMain>

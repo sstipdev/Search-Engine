@@ -8,12 +8,18 @@ export const BlogMain = styled.ul`
   padding: 0;
 `;
 
-export const BlogHeaderTitle = styled.h3`
-  text-align: center;
-  padding: 50px;
-  box-sizing: border-box;
-  border-bottom: 1px solid grey;
-  margin: 0;
+export const BlogHeader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+export const BlogTitle = styled.span`
+  padding: 25px 100px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 30px;
+  border-radius: 10px;
 `;
 
 export const BlogData = styled.li`
