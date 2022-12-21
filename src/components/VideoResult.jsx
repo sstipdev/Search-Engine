@@ -1,20 +1,25 @@
+import { VideoMain, VideoHeader, VideoTitle, VideoData, VideoUrl, VideoImg, VideoAuthor, VideoContentsTitle } from "../styles/VideoResultCSS";
+
 const VideoResult = ({ result }) => {
   return (
-    <div>
-      <h3>비디오</h3>
-      {result.map((info, i) => {
-        return (
-          <div key={i}>
-            <div>{info.author}</div>
-            <div>{info.title}</div>
-            <div>
-              <img src={info.thumbnail} />
-            </div>
-            <div>{info.url}</div>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <VideoHeader style={{ textAlign: "center" }}>
+        <VideoTitle>📽️ 동영상 📽️</VideoTitle>
+      </VideoHeader>
+      <VideoMain>
+        {result.map((info, i) => {
+          return (
+            <VideoData key={i}>
+              <VideoUrl href={info.url}>
+                <VideoImg src={info.thumbnail} />
+                <VideoContentsTitle>{info.title}</VideoContentsTitle>
+                <VideoAuthor>👤 {info.author}</VideoAuthor>
+              </VideoUrl>
+            </VideoData>
+          );
+        })}
+      </VideoMain>
+    </>
   );
 };
 
