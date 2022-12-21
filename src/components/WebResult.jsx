@@ -1,4 +1,4 @@
-import { WebMain, WebHeader, WebTitle, WebData, WebContents, WebLink, WebShortCut } from "../styles/WebResultCSS";
+import { WebMain, WebHeader, WebTitle, WebData, WebContents, WebLink, WebLinkSpan, WebShortCut, WebDescTitle } from "../styles/WebResultCSS";
 import { AiOutlineCheck } from "react-icons/ai";
 
 const WebResult = ({ result }) => {
@@ -11,11 +11,13 @@ const WebResult = ({ result }) => {
         {result.map((info, i) => {
           return (
             <WebData key={i}>
+              {console.log(info)}
               <WebContents dangerouslySetInnerHTML={{ __html: info.contents }}></WebContents>
               <WebShortCut>
+                <WebDescTitle dangerouslySetInnerHTML={{ __html: info.title }}></WebDescTitle>
                 <WebLink href={info.url} target="_blank">
                   <AiOutlineCheck size="24" style={{ color: "green" }} />
-                  바로가기
+                  <WebLinkSpan>바로가기</WebLinkSpan>
                 </WebLink>
               </WebShortCut>
             </WebData>

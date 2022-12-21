@@ -25,11 +25,8 @@ const ChoiceType = () => {
       },
     });
 
-    console.log(data);
-
     // JSON으로 파일 변환.
     const json = await data.json();
-    console.log(json);
 
     // 변환된 JSON 객체를 State함수에 저장.
     setResult(json.documents);

@@ -28,15 +28,26 @@ export const WebData = styled.div`
 
 export const WebContents = styled.div`
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 `;
 
 export const WebShortCut = styled.div`
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const WebLink = styled.a`
-  color: grey;
   text-decoration: none;
+`;
+
+export const WebLinkSpan = styled.span`
+  color: grey;
+  position: relative;
+  bottom: 5px;
   font-size: 15px;
+`;
+
+export const WebDescTitle = styled.span`
+  color: ##8f8f8f;
 `;
