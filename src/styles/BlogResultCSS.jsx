@@ -37,7 +37,7 @@ export const BlogData = styled.li`
 export const BlogContents = styled.div`
   display: flex;
   flex-direction: column;
-  width: 70%;
+  max-width: 90%;
 `;
 
 export const BlogName = styled.p`
