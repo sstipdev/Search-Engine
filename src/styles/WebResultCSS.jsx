@@ -22,7 +22,7 @@ export const WebData = styled.div`
 
 export const WebContents = styled.div`
   color: black;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 
 export const WebShortCut = styled.div`

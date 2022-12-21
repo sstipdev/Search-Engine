@@ -4,7 +4,7 @@ import { AiOutlineCheck } from "react-icons/ai";
 const WebResult = ({ result }) => {
   return (
     <WebMain>
-      <WebTitle>Web Api Data Results</WebTitle>
+      <WebTitle>🌐 웹 🌐</WebTitle>
       {result.map((info, i) => {
         return (
           <WebData key={i}>

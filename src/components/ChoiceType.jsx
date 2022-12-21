@@ -60,17 +60,17 @@ const ChoiceType = () => {
       </Header>
 
       <ChoiceBox>
-        <SearchType onClick={() => setChoice("web")}>웹 문서</SearchType>
-        <SearchType onClick={() => setChoice("blog")}>블로그</SearchType>
-        <SearchType onClick={() => setChoice("vclip")}>동영상</SearchType>
-        <SearchType onClick={() => setChoice("image")}>이미지</SearchType>
+        <SearchType onClick={() => setChoice("web")}>🌐 웹 문서 🌐</SearchType>
+        <SearchType onClick={() => setChoice("blog")}>📚 블로그 📚</SearchType>
+        <SearchType onClick={() => setChoice("vclip")}>📽️ 동영상 📽️</SearchType>
+        <SearchType onClick={() => setChoice("image")}>🌆 이미지 🌆</SearchType>
       </ChoiceBox>
 
       <MainResult>
         {choice === "web" && result ? <WebResult result={result} /> : null}
+        {choice === "blog" && result ? <BlogResult result={result} /> : null}
         {choice === "vclip" && result ? <VideoResult result={result} /> : null}
         {choice === "image" && result ? <ImageResult result={result} /> : null}
-        {choice === "blog" && result ? <BlogResult result={result} /> : null}
       </MainResult>
     </ChoiceTypeBox>
   );
