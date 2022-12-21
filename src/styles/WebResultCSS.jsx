@@ -12,6 +12,7 @@ export const WebHeader = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 50px;
 `;
 
 export const WebTitle = styled.span`
@@ -29,6 +30,8 @@ export const WebData = styled.div`
 export const WebContents = styled.div`
   color: black;
   margin-bottom: 40px;
+  width: 100%;
+  max-width: 80%;
 `;
 
 export const WebShortCut = styled.div`
@@ -46,8 +49,10 @@ export const WebLinkSpan = styled.span`
   position: relative;
   bottom: 5px;
   font-size: 15px;
+  z-index: -1;
 `;
 
 export const WebDescTitle = styled.span`
   color: ##8f8f8f;
+  max-width: 70%;
 `;

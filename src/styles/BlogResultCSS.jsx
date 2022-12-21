@@ -20,6 +20,7 @@ export const BlogTitle = styled.span`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-bottom: 30px;
   border-radius: 10px;
+  margin-top: 50px;
 `;
 
 export const BlogData = styled.li`

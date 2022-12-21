@@ -4,6 +4,17 @@ export const ChoiceTypeBox = styled.div`
   width: 100%;
 `;
 
+export const MainName = styled.p`
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  font-size: 22px;
+  height: 100px;
+  margin: 0;
+  padding-top: 30px;
+`;
+
 export const LogoImg = styled.img`
   width: 60px;
   height: 60px;
@@ -20,7 +31,7 @@ export const Header = styled.div`
   box-sizing: border-box;
   margin-bottom: 50px;
   position: fixed;
-  top: 0;
+  top: 50px;
   background-color: white;
 `;
 
@@ -53,9 +64,8 @@ export const ChoiceBox = styled.ul`
   display: flex;
   justify-content: space-around;
   padding: 0;
-  margin-bottom: 40px;
   position: fixed;
-  top: 100px;
+  top: 150px;
   background-color: white;
 `;
 

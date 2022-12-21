@@ -5,7 +5,7 @@ import VideoResult from "./VideoResult";
 import ImageResult from "./ImageResult";
 import BlogResult from "./BlogResult";
 
-import { ChoiceTypeBox, LogoImg, Header, UserForm, UserInput, SubmitBtn, ChoiceBox, SearchType, MainResult } from "../styles/ChoiceTypeCSS";
+import { ChoiceTypeBox, MainName, LogoImg, Header, UserForm, UserInput, SubmitBtn, ChoiceBox, SearchType, MainResult } from "../styles/ChoiceTypeCSS";
 
 const ChoiceType = () => {
   const [choice, setChoice] = useState("");
@@ -46,6 +46,7 @@ const ChoiceType = () => {
 
   return (
     <ChoiceTypeBox>
+      <MainName>SBDM</MainName>
       <Header>
         <LogoImg src={Logo} />
         <UserForm onSubmit={(e) => searchResult(e)} id="submit-info">
