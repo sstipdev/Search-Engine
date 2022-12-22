@@ -72,7 +72,6 @@ export const ChoiceBox = styled.ul`
 export const SearchType = styled.li`
   width: 100%;
   text-align: center;
-  color: green;
   list-style: none;
   padding: 15px;
   box-sizing: border-box;

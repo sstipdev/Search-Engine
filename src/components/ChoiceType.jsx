@@ -59,10 +59,18 @@ const ChoiceType = () => {
 
       <ChoiceBox>
         {/* 클릭시 CSS 기능 추가 예정 */}
-        <SearchType onClick={() => setChoice("web")}>🌐 웹 문서 🌐</SearchType>
-        <SearchType onClick={() => setChoice("blog")}>📚 블로그 📚</SearchType>
-        <SearchType onClick={() => setChoice("vclip")}>📽️ 동영상 📽️</SearchType>
-        <SearchType onClick={() => setChoice("image")}>🌆 이미지 🌆</SearchType>
+        <SearchType onClick={() => setChoice("web")} className={choice === "web" ? "active" : ""}>
+          🌐 웹 문서 🌐
+        </SearchType>
+        <SearchType onClick={() => setChoice("blog")} className={choice === "blog" ? "active" : ""}>
+          📚 블로그 📚
+        </SearchType>
+        <SearchType onClick={() => setChoice("vclip")} className={choice === "vclip" ? "active" : ""}>
+          📽️ 동영상 📽️
+        </SearchType>
+        <SearchType onClick={() => setChoice("image")} className={choice === "image" ? "active" : ""}>
+          🌆 이미지 🌆
+        </SearchType>
       </ChoiceBox>
 
       <MainResult>
