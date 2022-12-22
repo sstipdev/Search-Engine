@@ -13,6 +13,10 @@ export const WebHeader = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 50px;
+
+  @media screen and (max-width: 600px) {
+    margin-top: 140px;
+  }
 `;
 
 export const WebTitle = styled.span`

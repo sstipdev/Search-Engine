@@ -16,6 +16,10 @@ export const VideoHeader = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 50px;
+  @media screen and (max-width: 600px) {
+    margin-top: 140px;
+  }
 `;
 
 export const VideoTitle = styled.span`
@@ -23,7 +27,6 @@ export const VideoTitle = styled.span`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-bottom: 30px;
   border-radius: 10px;
-  margin-top: 50px;
 `;
 
 export const VideoData = styled.div`

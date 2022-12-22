@@ -13,6 +13,9 @@ export const ImageTitle = styled.span`
   margin-bottom: 30px;
   border-radius: 10px;
   margin-top: 50px;
+  @media screen and (max-width: 600px) {
+    margin-top: 140px;
+  }
 `;
 
 export const ImageMain = styled.div`
