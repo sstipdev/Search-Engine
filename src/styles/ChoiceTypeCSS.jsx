@@ -12,7 +12,7 @@ export const MainName = styled.p`
   font-size: 22px;
   height: 100px;
   margin: 0;
-  padding-top: 30px;
+  padding-top: 25px;
 `;
 
 export const LogoImg = styled.img`
@@ -33,12 +33,20 @@ export const Header = styled.div`
   position: fixed;
   top: 50px;
   background-color: white;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export const UserForm = styled.form`
   width: 60%;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 600px) {
+    transform: translateY(10px);
+    width: 100%;
+  }
 `;
 
 export const UserInput = styled.input`
@@ -46,17 +54,33 @@ export const UserInput = styled.input`
   height: 40px;
   text-align: center;
   border-radius: 5px;
-  border: 1px solid blue;
+  border: 0.3px solid grey;
   &:focus {
     border: 1px solid green;
     outline: none;
   }
+
+  @media screen and (max-width: 600px) {
+    width: 68%;
+    border-radius: 7px;
+  }
 `;
 
 export const SubmitBtn = styled.button`
-  padding: 15px 30px;
+  width: 15%;
+  height: 45px;
   border-radius: 15px;
   border: none;
+  cursor: pointer;
+  font-size: 17px;
+  @media screen and (max-width: 600px) {
+    transform: translateY(20px);
+    width: 70%;
+    border-radius: 7px;
+  }
+  &:focus {
+    border: 0.2px solid grey;
+  }
 `;
 
 export const ChoiceBox = styled.ul`
@@ -67,6 +91,11 @@ export const ChoiceBox = styled.ul`
   position: fixed;
   top: 150px;
   background-color: white;
+  font-size: 13px;
+
+  @media screen and (max-width: 600px) {
+    transform: translateY(95px);
+  }
 `;
 
 export const SearchType = styled.li`
