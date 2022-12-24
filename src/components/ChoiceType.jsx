@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "../assets/logo.jpeg";
 import WebResult from "./WebResult";
 import VideoResult from "./VideoResult";
@@ -12,13 +12,12 @@ const ChoiceType = () => {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState();
 
+  const HOST = `https://dapi.kakao.com/v2/search/${choice}?query=${search}`;
   const API_KEY = import.meta.env.VITE_REACT_API_KEY;
-  const HOST = "https://dapi.kakao.com";
-  const GET_URL = `${HOST}/v2/search/${choice}?query=${search}`;
 
   const getApiData = async () => {
     // Fetch를 통해 API랑 통신 및 promise 반환
-    const data = await fetch(GET_URL, {
+    const data = await fetch(HOST, {
       method: "GET",
       headers: {
         Authorization: `KakaoAK ${API_KEY}`,
@@ -32,7 +31,7 @@ const ChoiceType = () => {
     setResult(json.documents);
   };
 
-  const searchResult = async (e) => {
+  const searchResult = (e) => {
     e.preventDefault();
     if (search === "") {
       return alert("공백은 금지 입니다.");

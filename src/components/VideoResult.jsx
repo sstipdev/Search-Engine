@@ -10,7 +10,7 @@ const VideoResult = ({ result }) => {
         {result.map((info, i) => {
           return (
             <VideoData key={i}>
-              <VideoUrl href={info.url}>
+              <VideoUrl href={info.url} target="__blank">
                 <VideoImg src={info.thumbnail} />
                 <VideoContentsTitle>{info.title}</VideoContentsTitle>
                 <VideoAuthor>👤 {info.author}</VideoAuthor>
