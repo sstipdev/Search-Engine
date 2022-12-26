@@ -12,9 +12,10 @@ export const ImageTitle = styled.span`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-bottom: 30px;
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 90px;
+
   @media screen and (max-width: 600px) {
-    margin-top: 140px;
+    margin-top: 100px;
   }
 `;
 

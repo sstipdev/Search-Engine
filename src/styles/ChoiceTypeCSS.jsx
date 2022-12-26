@@ -64,7 +64,7 @@ export const ChoiceBox = styled.ul`
   justify-content: space-around;
   padding: 0;
   position: fixed;
-  top: 210px;
+  top: 200px;
   background-color: white;
   font-size: 13px;
 `;

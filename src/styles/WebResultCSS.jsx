@@ -12,10 +12,10 @@ export const WebHeader = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 90px;
 
   @media screen and (max-width: 600px) {
-    margin-top: 140px;
+    margin-top: 100px;
   }
 `;
 
