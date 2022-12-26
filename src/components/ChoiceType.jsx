@@ -12,10 +12,11 @@ const ChoiceType = () => {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState();
 
-  const HOST = `https://dapi.kakao.com/v2/search/${choice}?query=${search}`;
   const API_KEY = import.meta.env.VITE_REACT_API_KEY;
 
-  const getApiData = async () => {
+  const getApiData = async (choice) => {
+    const HOST = `https://dapi.kakao.com/v2/search/${choice}?query=${search}`;
+
     // Fetch를 통해 API랑 통신 및 promise 반환
     const data = await fetch(HOST, {
       method: "GET",
@@ -28,19 +29,20 @@ const ChoiceType = () => {
     const json = await data.json();
 
     // 변환된 JSON 객체를 State함수에 저장.
-    setResult(json.documents);
+    console.log(result);
+    return setResult(json.documents);
   };
 
-  const searchResult = (e) => {
-    e.preventDefault();
+  const setChangeResult = (type) => {
     if (search === "") {
       return alert("공백은 금지 입니다.");
     }
-    if (choice === "") {
-      setSearch("");
-      return alert("검색 항목을 선택해주셔야 합니다 !");
+
+    setChoice(type);
+
+    if (type !== choice) {
+      return getApiData(type);
     }
-    getApiData();
   };
 
   return (
@@ -48,9 +50,9 @@ const ChoiceType = () => {
       <MainName>SBDM</MainName>
       <Header>
         <LogoImg src={Logo} />
-        <UserForm onSubmit={(e) => searchResult(e)} id="submit-info">
-          <UserInput onChange={(e) => setSearch(e.target.value)} type="text" placeholder="검색어를 기입해주세요" value={search} />
-        </UserForm>
+        {/* <UserForm onSubmit={(e) => searchResult(e)} id="submit-info">
+        </UserForm> */}
+        <UserInput onInput={(e) => setSearch(e.target.value)} type="text" placeholder="검색어를 기입해주세요" value={search} />
         <SubmitBtn type="submit" form="submit-info">
           검색
         </SubmitBtn>
@@ -58,16 +60,16 @@ const ChoiceType = () => {
 
       <ChoiceBox>
         {/* 클릭시 CSS 기능 추가 예정 */}
-        <SearchType onClick={() => setChoice("web")} className={choice === "web" ? "active" : ""}>
+        <SearchType onClick={(e) => setChangeResult("web")} className={choice === "web" ? "active" : ""}>
           🌐 웹 문서 🌐
         </SearchType>
-        <SearchType onClick={() => setChoice("blog")} className={choice === "blog" ? "active" : ""}>
+        <SearchType onClick={(e) => setChangeResult("blog")} className={choice === "blog" ? "active" : ""}>
           📚 블로그 📚
         </SearchType>
-        <SearchType onClick={() => setChoice("vclip")} className={choice === "vclip" ? "active" : ""}>
+        <SearchType onClick={(e) => setChangeResult("vclip")} className={choice === "vclip" ? "active" : ""}>
           📽️ 동영상 📽️
         </SearchType>
-        <SearchType onClick={() => setChoice("image")} className={choice === "image" ? "active" : ""}>
+        <SearchType onClick={(e) => setChangeResult("image")} className={choice === "image" ? "active" : ""}>
           🌆 이미지 🌆
         </SearchType>
       </ChoiceBox>

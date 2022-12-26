@@ -11,7 +11,6 @@ const WebResult = ({ result }) => {
         {result.map((info, i) => {
           return (
             <WebData key={i}>
-              {console.log(info)}
               <WebContents dangerouslySetInnerHTML={{ __html: info.contents }}></WebContents>
               <WebShortCut>
                 <WebDescTitle dangerouslySetInnerHTML={{ __html: info.title }}></WebDescTitle>

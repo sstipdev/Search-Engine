@@ -9,7 +9,6 @@ const ImageResult = ({ result }) => {
       <ImageMain>
         {result.map((info, i) => (
           <ImageData key={i}>
-            {console.log(info)}
             <ImageLink href={info.doc_url} target="_blank">
               <Image src={info.thumbnail_url} />
               <ImageSiteName>👤 {info.display_sitename}</ImageSiteName>
