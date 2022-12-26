@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Logo from "../assets/logo.jpeg";
-import WebResult from "./WebResult";
-import VideoResult from "./VideoResult";
-import ImageResult from "./ImageResult";
-import BlogResult from "./BlogResult";
+import WebResult from "../components/WebResult";
+import VideoResult from "../components/VideoResult";
+import ImageResult from "../components/ImageResult";
+import BlogResult from "../components/BlogResult";
 
 import { ChoiceTypeBox, MainName, LogoImg, Header, UserInput, ChoiceBox, SearchType, MainResult } from "../styles/ChoiceTypeCSS";
 
