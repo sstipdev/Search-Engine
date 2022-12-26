@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Logo from "../assets/logo.jpeg";
 import WebResult from "./WebResult";
 import VideoResult from "./VideoResult";
@@ -38,8 +38,10 @@ const ChoiceType = () => {
       return alert("공백은 금지 입니다.");
     }
 
+    // setChangeResult 함수가 호출되면 인수로 받은 type으로 choice 함수 state값 변경
     setChoice(type);
 
+    // 인수로 받은 type이 choice의 state의 값과 동일하지 않다면 getApiData() 호출
     if (type !== choice) {
       return getApiData(type);
     }
@@ -50,12 +52,7 @@ const ChoiceType = () => {
       <MainName>SBDM</MainName>
       <Header>
         <LogoImg src={Logo} />
-        {/* <UserForm onSubmit={(e) => searchResult(e)} id="submit-info">
-        </UserForm> */}
         <UserInput onInput={(e) => setSearch(e.target.value)} type="text" placeholder="검색어를 기입해주세요" value={search} />
-        {/* <SubmitBtn type="submit" form="submit-info">
-          검색
-        </SubmitBtn> */}
       </Header>
 
       <ChoiceBox>
