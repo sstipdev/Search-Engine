@@ -20,6 +20,7 @@ export const LogoImg = styled.img`
   height: 60px;
   border-radius: 30px;
   border: 1px solid purple;
+  margin-bottom: 15px;
 `;
 
 export const Header = styled.div`
@@ -33,19 +34,10 @@ export const Header = styled.div`
   position: fixed;
   top: 50px;
   background-color: white;
+  flex-direction: column;
 
   @media screen and (max-width: 600px) {
     flex-direction: column;
-  }
-`;
-
-export const UserForm = styled.form`
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  @media screen and (max-width: 600px) {
-    transform: translateY(10px);
-    width: 100%;
   }
 `;
 
@@ -66,36 +58,15 @@ export const UserInput = styled.input`
   }
 `;
 
-export const SubmitBtn = styled.button`
-  width: 15%;
-  height: 45px;
-  border-radius: 15px;
-  border: none;
-  cursor: pointer;
-  font-size: 17px;
-  @media screen and (max-width: 600px) {
-    transform: translateY(20px);
-    width: 70%;
-    border-radius: 7px;
-  }
-  &:focus {
-    border: 0.2px solid grey;
-  }
-`;
-
 export const ChoiceBox = styled.ul`
   width: 100%;
   display: flex;
   justify-content: space-around;
   padding: 0;
   position: fixed;
-  top: 150px;
+  top: 210px;
   background-color: white;
   font-size: 13px;
-
-  @media screen and (max-width: 600px) {
-    transform: translateY(95px);
-  }
 `;
 
 export const SearchType = styled.li`

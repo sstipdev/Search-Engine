@@ -5,7 +5,7 @@ import VideoResult from "./VideoResult";
 import ImageResult from "./ImageResult";
 import BlogResult from "./BlogResult";
 
-import { ChoiceTypeBox, MainName, LogoImg, Header, UserForm, UserInput, SubmitBtn, ChoiceBox, SearchType, MainResult } from "../styles/ChoiceTypeCSS";
+import { ChoiceTypeBox, MainName, LogoImg, Header, UserInput, ChoiceBox, SearchType, MainResult } from "../styles/ChoiceTypeCSS";
 
 const ChoiceType = () => {
   const [choice, setChoice] = useState("");
@@ -53,9 +53,9 @@ const ChoiceType = () => {
         {/* <UserForm onSubmit={(e) => searchResult(e)} id="submit-info">
         </UserForm> */}
         <UserInput onInput={(e) => setSearch(e.target.value)} type="text" placeholder="검색어를 기입해주세요" value={search} />
-        <SubmitBtn type="submit" form="submit-info">
+        {/* <SubmitBtn type="submit" form="submit-info">
           검색
-        </SubmitBtn>
+        </SubmitBtn> */}
       </Header>
 
       <ChoiceBox>
