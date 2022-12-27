@@ -8,6 +8,7 @@ const Login = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const onChangeLJBtn = () => setAccount((prev) => !prev);
 
@@ -16,13 +17,14 @@ const Login = () => {
     try {
       let user;
       if (!account) {
+        // account 값이 false일 경우 로그인 함수 호출
         user = await signInWithEmailAndPassword(auth, email, password);
       } else {
+        // account 값이 true 경우 회원가입 함수 호출
         user = await createUserWithEmailAndPassword(auth, email, password);
       }
-      console.log(user);
     } catch (error) {
-      console.log(error);
+      setError(error.message);
     }
   };
 
@@ -62,6 +64,7 @@ const Login = () => {
           </>
         )}
         <button type="submit">{account ? "계정생성" : "로그인"}</button>
+        {error}
       </form>
       <button onClick={onChangeLJBtn}>{!account ? "계정생성" : "로그인"}</button>
 
