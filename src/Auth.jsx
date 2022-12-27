@@ -1,5 +1,6 @@
 // 2022 06 21 기준 firebase import
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCUXNkK2ELz5E2__WQMYnH7SAz1oxI7k30",
@@ -14,4 +15,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+export const auth = getAuth(app);
 export default app;
