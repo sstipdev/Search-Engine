@@ -6,6 +6,7 @@ import ImageResult from "../components/ImageResult";
 import BlogResult from "../components/BlogResult";
 
 import { ChoiceTypeBox, MainName, LogoImg, Header, UserInput, ChoiceBox, SearchType, MainResult } from "../styles/ChoiceTypeCSS";
+import Login from "./Login";
 
 const ChoiceType = () => {
   const [choice, setChoice] = useState("");

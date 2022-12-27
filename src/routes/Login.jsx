@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import GoogleLogin from "../components/SNS-Login/GoogleLogin";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { auth } from "../Auth";
 
 const Login = () => {
