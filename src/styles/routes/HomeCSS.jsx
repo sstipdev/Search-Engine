@@ -2,17 +2,7 @@ import styled from "styled-components";
 
 export const ChoiceTypeBox = styled.div`
   width: 100%;
-`;
-
-export const MainName = styled.p`
-  position: fixed;
-  text-align: center;
-  width: 100%;
-  background-color: white;
-  font-size: 22px;
-  height: 100px;
-  margin: 0;
-  padding-top: 25px;
+  display: flex;
 `;
 
 export const LogoImg = styled.img`

@@ -4,7 +4,9 @@ import WebResult from "../components/WebResult";
 import VideoResult from "../components/VideoResult";
 import ImageResult from "../components/ImageResult";
 import BlogResult from "../components/BlogResult";
-import { ChoiceTypeBox, MainName, LogoImg, Header, UserInput, ChoiceBox, SearchType, MainResult } from "../styles/routes/HomeCSS";
+import NavBar from "../components/NavBar";
+import styles from "../styles/routes/Home.module.css";
+import { ChoiceTypeBox, LogoImg, Header, UserInput, ChoiceBox, SearchType, MainResult } from "../styles/routes/HomeCSS";
 
 const ChoiceType = () => {
   const [choice, setChoice] = useState("");
@@ -48,8 +50,10 @@ const ChoiceType = () => {
 
   return (
     <ChoiceTypeBox>
-      <MainName>SBDM</MainName>
-
+      <div className={styles.header}>
+        <NavBar />
+        <p className={styles.MainName}>SBDM</p>
+      </div>
       <Header>
         <LogoImg src={Logo} />
         <UserInput onInput={(e) => setSearch(e.target.value)} type="text" placeholder="검색어를 기입해주세요" value={search} />

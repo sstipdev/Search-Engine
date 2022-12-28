@@ -1,0 +1,9 @@
+.btn {
+  color: red;
+  margin: 0;
+}
+
+.btn:hover {
+  color: grey;
+  font-weight: bold;
+}
