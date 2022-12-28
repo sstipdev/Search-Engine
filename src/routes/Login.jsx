@@ -3,6 +3,10 @@ import GoogleLogin from "../components/SNS-Login/GoogleLogin";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { auth } from "../Auth";
 
+// CSS
+import styles from "../styles/routes/Login.module.css";
+import Logo from "../assets/logo.jpeg";
+
 const Login = () => {
   const [account, setAccount] = useState(false);
   const [userName, setUserName] = useState("");
@@ -48,27 +52,37 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>여기는 로그인 화면 입니다.</h2>
-      <form onSubmit={onSubmitAccount}>
+    <div className={styles.login_wrap}>
+      <div className={styles.header}>
+        <img src={Logo} className={styles.header__img} />
+        <h2 className={styles.header__title}>사이트</h2>
+      </div>
+
+      <form onSubmit={onSubmitAccount} className={styles.login_form}>
         {!account ? (
           <>
-            <input type="email" placeholder="이메일" name="email" onChange={setUserInfo} />
-            <input type="password" placeholder="비밀번호" name="password" onChange={setUserInfo} />
+            <input className={styles.login_input} type="email" placeholder="이메일" name="email" onChange={setUserInfo} value={email} />
+            <input className={styles.login_input} type="password" placeholder="비밀번호" name="password" onChange={setUserInfo} value={password} />
           </>
         ) : (
           <>
-            <input type="text" placeholder="이름" name="userName" onChange={setUserInfo} />
-            <input type="email" placeholder="이메일" name="email" onChange={setUserInfo} />
-            <input type="password" placeholder="비밀번호" name="password" onChange={setUserInfo} />
+            <input className={styles.login_input} type="text" placeholder="이름" name="userName" onChange={setUserInfo} value={userName} />
+            <input className={styles.login_input} type="email" placeholder="이메일" name="email" onChange={setUserInfo} value={email} />
+            <input className={styles.login_input} type="password" placeholder="비밀번호" name="password" onChange={setUserInfo} value={password} />
           </>
         )}
-        <button type="submit">{account ? "계정생성" : "로그인"}</button>
+        <button className={styles.login_btn} type="submit">
+          {account ? "계정생성" : "로그인"}
+        </button>
         {error}
       </form>
-      <button onClick={onChangeLJBtn}>{!account ? "계정생성" : "로그인"}</button>
-
-      <GoogleLogin />
+      <div className={styles.login_footer}>
+        <GoogleLogin />
+        <div className={styles.login_footer_line}></div>
+        <button className={styles.login_fotter_create} onClick={onChangeLJBtn}>
+          {!account ? "계정생성" : "로그인"}
+        </button>
+      </div>
     </div>
   );
 };
