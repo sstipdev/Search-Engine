@@ -1,4 +1,4 @@
-import { ImageHeader, ImageTitle, ImageMain, ImageData, ImageLink, Image, ImageSiteName } from "../styles/ImageResultCSS";
+import { ImageHeader, ImageTitle, ImageMain, ImageData, ImageLink, Image, ImageSiteName } from "../styles/components/ImageResultCSS";
 
 const ImageResult = ({ result }) => {
   return (

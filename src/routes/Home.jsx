@@ -5,7 +5,7 @@ import VideoResult from "../components/VideoResult";
 import ImageResult from "../components/ImageResult";
 import BlogResult from "../components/BlogResult";
 
-import { ChoiceTypeBox, MainName, LogoImg, Header, UserInput, ChoiceBox, SearchType, MainResult } from "../styles/HomeCSS";
+import { ChoiceTypeBox, MainName, LogoImg, Header, UserInput, ChoiceBox, SearchType, MainResult } from "../styles/routes/HomeCSS";
 
 const ChoiceType = () => {
   const [choice, setChoice] = useState("");

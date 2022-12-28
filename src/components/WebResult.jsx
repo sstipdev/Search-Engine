@@ -1,4 +1,4 @@
-import { WebMain, WebHeader, WebTitle, WebData, WebContents, WebLink, WebLinkSpan, WebShortCut, WebDescTitle } from "../styles/WebResultCSS";
+import { WebMain, WebHeader, WebTitle, WebData, WebContents, WebLink, WebLinkSpan, WebShortCut, WebDescTitle } from "../styles/components/WebResultCSS";
 import { AiOutlineCheck } from "react-icons/ai";
 
 const WebResult = ({ result }) => {

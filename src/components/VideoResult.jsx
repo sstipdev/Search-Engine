@@ -1,4 +1,4 @@
-import { VideoMain, VideoHeader, VideoTitle, VideoData, VideoUrl, VideoImg, VideoAuthor, VideoContentsTitle } from "../styles/VideoResultCSS";
+import { VideoMain, VideoHeader, VideoTitle, VideoData, VideoUrl, VideoImg, VideoAuthor, VideoContentsTitle } from "../styles/components/VideoResultCSS";
 
 const VideoResult = ({ result }) => {
   return (

@@ -9,7 +9,7 @@ import {
   ImgLink,
   BlogContentsDesc,
   BlogImg,
-} from "../styles/BlogResultCSS";
+} from "../styles/components/BlogResultCSS";
 
 const BlogResult = ({ result }) => {
   return (
