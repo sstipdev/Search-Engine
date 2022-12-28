@@ -38,6 +38,7 @@
   margin: 3px;
   border: none;
   border-radius: 5px;
+  text-align: center;
 }
 
 .login_btn {
@@ -58,4 +59,12 @@
   height: 1px;
   background-color: grey;
   margin: 15px auto;
+}
+
+.login_footer_create {
+  border: none;
+  width: 300px;
+  height: 40px;
+  color: grey;
+  font-weight: bold;
 }

@@ -79,7 +79,7 @@ const Login = () => {
       <div className={styles.login_footer}>
         <GoogleLogin />
         <div className={styles.login_footer_line}></div>
-        <button className={styles.login_fotter_create} onClick={onChangeLJBtn}>
+        <button className={styles.login_footer_create} onClick={onChangeLJBtn}>
           {!account ? "계정생성" : "로그인"}
         </button>
       </div>
