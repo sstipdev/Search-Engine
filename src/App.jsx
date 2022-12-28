@@ -1,4 +1,4 @@
-import ChoiceType from "./routes/ChoiceType";
+import Home from "./routes/Home";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Login from "./routes/Login";
 import NotPage from "./routes/NotPage";
@@ -37,7 +37,7 @@ function App() {
     <div className="App">
       {login ? (
         <Routes>
-          <Route path="/main" element={<ChoiceType />} />
+          <Route path="/main" element={<Home />} />
           <Route path="/*" element={<NotPage />} />
         </Routes>
       ) : (
