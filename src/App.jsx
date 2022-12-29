@@ -19,15 +19,15 @@ function App() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUserName(auth.currentUser.displayName);
+        navigate("/main");
+
         // 로그인이 되었다면 state 함수 true로 업뎃
         setLogin(true);
         // 로그인이 되었을경우 main 컴포넌트로 이동.
-        navigate("/main");
       } else {
         // 아니면 false로 업뎃
         setLogin(false);
         // 로그인이 안되었을 경우 / 로그인 페이지로 이동
-        navigate("/login");
       }
       setLoading(false);
     });
@@ -44,6 +44,7 @@ function App() {
         </Routes>
       ) : (
         <Routes>
+          <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/*" element={<NotPage />} />
         </Routes>
