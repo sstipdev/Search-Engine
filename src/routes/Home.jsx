@@ -6,9 +6,9 @@ import ImageResult from "../components/ImageResult";
 import BlogResult from "../components/BlogResult";
 import NavBar from "../components/NavBar";
 import styles from "../styles/routes/Home.module.css";
-import { ChoiceTypeBox, LogoImg, Header, UserInput, ChoiceBox, SearchType, MainResult } from "../styles/routes/HomeCSS";
+import { Header, UserInput, ChoiceBox, SearchType, MainResult } from "../styles/routes/HomeCSS";
 
-const ChoiceType = () => {
+const Home = () => {
   const [choice, setChoice] = useState("");
   const [search, setSearch] = useState("");
   const [result, setResult] = useState();
@@ -49,18 +49,17 @@ const ChoiceType = () => {
   };
 
   return (
-    <ChoiceTypeBox>
+    <div className={styles.home}>
+      <NavBar />
       <div className={styles.header}>
-        <NavBar />
-        <p className={styles.MainName}>SBDM</p>
+        <div className={styles.MainName}>SBDM</div>
       </div>
+
       <Header>
-        <LogoImg src={Logo} />
         <UserInput onInput={(e) => setSearch(e.target.value)} type="text" placeholder="검색어를 기입해주세요" value={search} />
       </Header>
 
       <ChoiceBox>
-        {/* 클릭시 CSS 기능 추가 예정 */}
         <SearchType onClick={(e) => setChangeResult("web")} className={choice === "web" ? "active" : ""}>
           🌐 웹 문서 🌐
         </SearchType>
@@ -81,8 +80,8 @@ const ChoiceType = () => {
         {choice === "vclip" && result ? <VideoResult result={result} /> : null}
         {choice === "image" && result ? <ImageResult result={result} /> : null}
       </MainResult>
-    </ChoiceTypeBox>
+    </div>
   );
 };
 
-export default ChoiceType;
+export default Home;

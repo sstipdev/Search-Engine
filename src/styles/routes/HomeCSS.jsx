@@ -1,31 +1,17 @@
 import styled from "styled-components";
 
-export const ChoiceTypeBox = styled.div`
-  width: 100%;
-  display: flex;
-`;
-
-export const LogoImg = styled.img`
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
-  border: 1px solid purple;
-  margin-bottom: 15px;
-`;
-
 export const Header = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
   box-sizing: border-box;
+  margin-top: 40px;
   margin-bottom: 50px;
-  position: fixed;
-  top: 50px;
   background-color: white;
   flex-direction: column;
-
+  position: fixed;
   @media screen and (max-width: 600px) {
     flex-direction: column;
   }
@@ -53,10 +39,10 @@ export const ChoiceBox = styled.ul`
   display: flex;
   justify-content: space-around;
   padding: 0;
-  position: fixed;
-  top: 200px;
   background-color: white;
   font-size: 13px;
+  position: fixed;
+  transform: translateY(110px);
 `;
 
 export const SearchType = styled.li`
