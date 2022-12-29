@@ -6,8 +6,17 @@ const NavBar = () => {
   const [nav, setNav] = useState(false);
   const showNavBarMenu = () => setNav((prev) => !prev);
   return (
-    <div className={styles.btn} id={nav ? styles.show : styles.hide} onClick={showNavBarMenu}>
-      <div>메뉴</div>
+    <div className={styles.btn} id={nav ? styles.show : ""}>
+      <div className={styles.test}>
+        <span onClick={showNavBarMenu}>{!nav && "메뉴"}</span>
+      </div>
+      <div id={nav ? styles.showModal : ""}>
+        {nav && (
+          <div onClick={showNavBarMenu} className={styles.modalText}>
+            반갑습니다
+          </div>
+        )}
+      </div>
     </div>
   );
 };
