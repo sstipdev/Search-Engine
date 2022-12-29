@@ -8,7 +8,7 @@ import NavBar from "../components/NavBar";
 import styles from "../styles/routes/Home.module.css";
 import { Header, UserInput, ChoiceBox, SearchType, MainResult } from "../styles/routes/HomeCSS";
 
-const Home = () => {
+const Home = (props) => {
   const [choice, setChoice] = useState("");
   const [search, setSearch] = useState("");
   const [result, setResult] = useState();
@@ -50,7 +50,7 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      <NavBar />
+      <NavBar userNickName={props.userNickName} />
       <div className={styles.header}>
         <div className={styles.MainName}>SBDM</div>
       </div>

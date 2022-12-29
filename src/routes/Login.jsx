@@ -27,6 +27,7 @@ const Login = () => {
         // account 값이 true 경우 회원가입 함수 호출
         user = await createUserWithEmailAndPassword(auth, email, password);
       }
+      setUserName(auth.currentUser.displayName);
     } catch (error) {
       setError(error.message);
     }
