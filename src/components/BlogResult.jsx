@@ -1,39 +1,28 @@
-import {
-  BlogMain,
-  BlogHeader,
-  BlogTitle,
-  BlogData,
-  BlogContents,
-  BlogName,
-  BlogContentsTitle,
-  ImgLink,
-  BlogContentsDesc,
-  BlogImg,
-} from "../styles/components/BlogResultCSS";
+import styles from "../styles/components/BlogResult.module.css";
 
 const BlogResult = ({ result }) => {
   return (
-    <>
-      <BlogHeader>
-        <BlogTitle>📚 블로그 📚</BlogTitle>
-      </BlogHeader>
-      <BlogMain>
+    <div>
+      <div className={styles.blog_header}>
+        <span className={styles.blog_header__title}>📚 블로그 📚</span>
+      </div>
+      <div className={styles.blog_main}>
         {result.map((info, i) => (
-          <BlogData key={i}>
-            <ImgLink href={info.url} target="__blank">
-              <BlogContents>
-                <BlogName>
+          <div key={i} className={styles.blog_contents}>
+            <a href={info.url} target="__blank" className={styles.blog_img__link}>
+              <div className={styles.blog_contents__info}>
+                <p className={styles.blog_contents__info__identity}>
                   👤 {info.blogname} / ( 🕰️ {info.datetime} )
-                </BlogName>
-                <BlogContentsTitle dangerouslySetInnerHTML={{ __html: info.title }}></BlogContentsTitle>
-                <BlogContentsDesc dangerouslySetInnerHTML={{ __html: info.contents }}></BlogContentsDesc>
-              </BlogContents>
-            </ImgLink>
-            <BlogImg src={info.thumbnail} />
-          </BlogData>
+                </p>
+                <p dangerouslySetInnerHTML={{ __html: info.title }} className={styles.blog_contetns__info__title}></p>
+                <div dangerouslySetInnerHTML={{ __html: info.contents }} className={styles.blog_contetns__info__desc}></div>
+              </div>
+            </a>
+            <img src={info.thumbnail} className={styles.blog_img} />
+          </div>
         ))}
-      </BlogMain>
-    </>
+      </div>
+    </div>
   );
 };
 
