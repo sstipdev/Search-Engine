@@ -12,14 +12,12 @@ import { auth } from "./Auth";
 function App() {
   const [login, setLogin] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
     // 로그인이 되었는지 여부 체크.
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUserName(auth.currentUser.displayName);
-
+        navigate("/main");
         // 로그인이 되었다면 state 함수 true로 업뎃
         setLogin(true);
         // 로그인이 되었을경우 main 컴포넌트로 이동.
@@ -38,7 +36,8 @@ function App() {
     <div className="App">
       {login ? (
         <Routes>
-          <Route path="/main" element={<Home userNickName={userName} />} />
+          <Route path="/main" element={<Home />} />
+          <Route path="/main/*" element={<NotPage />} />
           <Route path="/*" element={<NotPage />} />
         </Routes>
       ) : (

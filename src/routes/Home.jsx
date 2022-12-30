@@ -6,7 +6,7 @@ import BlogResult from "../components/BlogResult";
 import NavBar from "../components/NavBar";
 import styles from "../styles/routes/Home.module.css";
 
-const Home = (props) => {
+const Home = () => {
   const [choice, setChoice] = useState("");
   const [search, setSearch] = useState("");
   const [result, setResult] = useState();
@@ -48,7 +48,7 @@ const Home = (props) => {
 
   return (
     <div className={styles.home}>
-      <NavBar userNickName={props.userNickName} />
+      <NavBar />
       <div className={styles.header}>
         <div className={styles.MainName}>SBDM</div>
       </div>
