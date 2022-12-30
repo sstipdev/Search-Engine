@@ -1,22 +1,22 @@
-import { ImageHeader, ImageTitle, ImageMain, ImageData, ImageLink, Image, ImageSiteName } from "../styles/components/ImageResultCSS";
+import styles from "../styles/components/ImageResult.module.css";
 
 const ImageResult = ({ result }) => {
   return (
-    <>
-      <ImageHeader>
-        <ImageTitle>🌆 이미지 🌆</ImageTitle>
-      </ImageHeader>
-      <ImageMain>
+    <div>
+      <div className={styles.image_header}>
+        <span className={styles.image_header__title}>🌆 이미지 🌆</span>
+      </div>
+      <div className={styles.image_main}>
         {result.map((info, i) => (
-          <ImageData key={i}>
-            <ImageLink href={info.doc_url} target="_blank">
-              <Image src={info.thumbnail_url} />
-              <ImageSiteName>👤 {info.display_sitename}</ImageSiteName>
-            </ImageLink>
-          </ImageData>
+          <div key={i} className={styles.image_contents}>
+            <a href={info.doc_url} target="_blank" className={styles.image_link}>
+              <img src={info.thumbnail_url} className={styles.image__link__thumbnail} />
+              <div className={styles.image__link__identity}>👤 {info.display_sitename}</div>
+            </a>
+          </div>
         ))}
-      </ImageMain>
-    </>
+      </div>
+    </div>
   );
 };
 
