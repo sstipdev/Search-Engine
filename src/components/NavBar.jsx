@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { signOut, getAuth } from "firebase/auth";
-import { AiFillSetting } from "react-icons/AI";
+import { AiFillSetting } from "react-icons/ai";
 
 // CSS
 import styles from "../styles/components/NavBar.module.css";
@@ -8,10 +8,12 @@ import styles from "../styles/components/NavBar.module.css";
 const NavBar = (props) => {
   const [nav, setNav] = useState(false);
   const showNavBarMenu = () => setNav((prev) => !prev);
-  const LogOut = async () => {
+  const handleLogout = async () => {
     const auth = getAuth();
     await signOut(auth);
   };
+
+  const handleChangeName = () => console.log(1);
 
   return (
     <div className={styles.navbar_wrap} id={nav ? styles.show : ""}>
@@ -19,7 +21,7 @@ const NavBar = (props) => {
         <span onClick={showNavBarMenu}>
           {!nav && (
             <span>
-              <AiFillSetting className={styles.icon_setting} />{" "}
+              <AiFillSetting className={styles.icon_setting} />
             </span>
           )}
         </span>
@@ -27,12 +29,23 @@ const NavBar = (props) => {
       <div id={nav ? styles.showNavBar : ""}>
         {nav && (
           <div className={styles.navbar_info}>
-            <div className={styles.navbar_text}>{props.userNickName} 님 반갑습니다</div>
-            <div className={styles.navbar_footer} onClick={showNavBarMenu}>
-              <button className={styles.navbar_footer_text}>닫기</button>
+            <div className={styles.navbar_text}>
+              <span className={styles.navbar_identity__username}>{props.userNickName}</span>
+              <span className={styles.navbar_identity__welcome__text}>님 반갑습니다</span>
             </div>
-            <div>
-              <button onClick={LogOut} className={styles.logout_btn}>
+
+            <div className={styles.navbar_close} onClick={showNavBarMenu}>
+              <button className={styles.navbar_close__btn}>닫기</button>
+            </div>
+
+            <div className={styles.navbar_update_profile}>
+              <button onClick={handleChangeName} className={styles.navbar_update_profile_btn}>
+                닉네임 변경
+              </button>
+            </div>
+
+            <div class={styles.navbar_logout}>
+              <button onClick={handleLogout} className={styles.navbar_logout__btn}>
                 로그아웃
               </button>
             </div>
