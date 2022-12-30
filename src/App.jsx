@@ -13,13 +13,12 @@ function App() {
   const [login, setLogin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [userName, setUserName] = useState("");
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     // 로그인이 되었는지 여부 체크.
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUserName(auth.currentUser.displayName);
-        navigate("/main");
 
         // 로그인이 되었다면 state 함수 true로 업뎃
         setLogin(true);

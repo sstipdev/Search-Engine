@@ -73,10 +73,10 @@ const Home = (props) => {
       </ul>
 
       <div className={styles.article_result}>
-        {choice === "web" && result ? <WebResult result={result} /> : null}
-        {choice === "blog" && result ? <BlogResult result={result} /> : null}
-        {choice === "vclip" && result ? <VideoResult result={result} /> : null}
-        {choice === "image" && result ? <ImageResult result={result} /> : null}
+        {choice === "web" && result && <WebResult result={result} />}
+        {choice === "blog" && result && <BlogResult result={result} />}
+        {choice === "vclip" && result && <VideoResult result={result} />}
+        {choice === "image" && result && <ImageResult result={result} />}
       </div>
     </div>
   );

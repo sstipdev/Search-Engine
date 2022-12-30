@@ -4,13 +4,16 @@ import { AiFillSetting } from "react-icons/ai";
 
 // CSS
 import styles from "../styles/components/NavBar.module.css";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = (props) => {
   const [nav, setNav] = useState(false);
   const showNavBarMenu = () => setNav((prev) => !prev);
+  const path = useNavigate();
   const handleLogout = async () => {
     const auth = getAuth();
     await signOut(auth);
+    path("/login");
   };
 
   const handleChangeName = () => console.log(1);
@@ -44,7 +47,7 @@ const NavBar = (props) => {
               </button>
             </div>
 
-            <div class={styles.navbar_logout}>
+            <div className={styles.navbar_logout}>
               <button onClick={handleLogout} className={styles.navbar_logout__btn}>
                 로그아웃
               </button>
