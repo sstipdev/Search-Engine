@@ -1,12 +1,10 @@
 import { useState } from "react";
-import Logo from "../assets/logo.jpeg";
 import WebResult from "../components/WebResult";
 import VideoResult from "../components/VideoResult";
 import ImageResult from "../components/ImageResult";
 import BlogResult from "../components/BlogResult";
 import NavBar from "../components/NavBar";
 import styles from "../styles/routes/Home.module.css";
-import { Header, UserInput, ChoiceBox, SearchType, MainResult } from "../styles/routes/HomeCSS";
 
 const Home = (props) => {
   const [choice, setChoice] = useState("");
@@ -55,31 +53,31 @@ const Home = (props) => {
         <div className={styles.MainName}>SBDM</div>
       </div>
 
-      <Header>
-        <UserInput onInput={(e) => setSearch(e.target.value)} type="text" placeholder="검색어를 기입해주세요" value={search} />
-      </Header>
+      <div className={styles.search_main}>
+        <input className={styles.search_main_input} onInput={(e) => setSearch(e.target.value)} type="text" placeholder="검색어를 기입해주세요" value={search} />
+      </div>
 
-      <ChoiceBox>
-        <SearchType onClick={(e) => setChangeResult("web")} className={choice === "web" ? "active" : ""}>
+      <ul className={styles.search_list}>
+        <li onClick={(e) => setChangeResult("web")} className={`${choice === "web" ? "active" : ""} ${styles.search_list_item}`}>
           🌐 웹 문서 🌐
-        </SearchType>
-        <SearchType onClick={(e) => setChangeResult("blog")} className={choice === "blog" ? "active" : ""}>
+        </li>
+        <li onClick={(e) => setChangeResult("blog")} className={`${choice === "blog" ? "active" : ""} ${styles.search_list_item}`}>
           📚 블로그 📚
-        </SearchType>
-        <SearchType onClick={(e) => setChangeResult("vclip")} className={choice === "vclip" ? "active" : ""}>
+        </li>
+        <li onClick={(e) => setChangeResult("vclip")} className={`${choice === "vclip" ? "active" : ""} ${styles.search_list_item}`}>
           📽️ 동영상 📽️
-        </SearchType>
-        <SearchType onClick={(e) => setChangeResult("image")} className={choice === "image" ? "active" : ""}>
+        </li>
+        <li onClick={(e) => setChangeResult("image")} className={`${choice === "image" ? "active" : ""} ${styles.search_list_item}`}>
           🌆 이미지 🌆
-        </SearchType>
-      </ChoiceBox>
+        </li>
+      </ul>
 
-      <MainResult>
+      <div className={styles.article_result}>
         {choice === "web" && result ? <WebResult result={result} /> : null}
         {choice === "blog" && result ? <BlogResult result={result} /> : null}
         {choice === "vclip" && result ? <VideoResult result={result} /> : null}
         {choice === "image" && result ? <ImageResult result={result} /> : null}
-      </MainResult>
+      </div>
     </div>
   );
 };
