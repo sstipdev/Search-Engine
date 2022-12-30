@@ -1,29 +1,29 @@
-import { WebMain, WebHeader, WebTitle, WebData, WebContents, WebLink, WebLinkSpan, WebShortCut, WebDescTitle } from "../styles/components/WebResultCSS";
 import { AiOutlineCheck } from "react-icons/ai";
+import styles from "../styles/components/WebResult.module.css";
 
 const WebResult = ({ result }) => {
   return (
-    <>
-      <WebHeader>
-        <WebTitle>🌐 웹 🌐</WebTitle>
-      </WebHeader>
-      <WebMain>
+    <div>
+      <div className={styles.web_header}>
+        <span className={styles.web_header__title}>🌐 웹 🌐</span>
+      </div>
+      <div className={styles.web_main}>
         {result.map((info, i) => {
           return (
-            <WebData key={i}>
-              <WebContents dangerouslySetInnerHTML={{ __html: info.contents }}></WebContents>
-              <WebShortCut>
-                <WebDescTitle dangerouslySetInnerHTML={{ __html: info.title }}></WebDescTitle>
-                <WebLink href={info.url} target="_blank">
-                  <AiOutlineCheck size="24" style={{ color: "green" }} />
-                  <WebLinkSpan>바로가기</WebLinkSpan>
-                </WebLink>
-              </WebShortCut>
-            </WebData>
+            <div key={i} className={styles.web_contents}>
+              <div dangerouslySetInnerHTML={{ __html: info.contents }} className={styles.web_contents__desc}></div>
+              <div className={styles.web_shortcut}>
+                <span dangerouslySetInnerHTML={{ __html: info.title }} className={styles.web_desc__title}></span>
+                <a href={info.url} target="_blank" className={styles.web_link}>
+                  <AiOutlineCheck size="24" className={styles.web_link__icons} />
+                  <span className={styles.web_link__text}>바로가기</span>
+                </a>
+              </div>
+            </div>
           );
         })}
-      </WebMain>
-    </>
+      </div>
+    </div>
   );
 };
 
