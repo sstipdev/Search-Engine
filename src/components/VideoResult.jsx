@@ -1,25 +1,25 @@
-import { VideoMain, VideoHeader, VideoTitle, VideoData, VideoUrl, VideoImg, VideoAuthor, VideoContentsTitle } from "../styles/components/VideoResultCSS";
+import styles from "../styles/components/VideoResult.module.css";
 
 const VideoResult = ({ result }) => {
   return (
-    <>
-      <VideoHeader>
-        <VideoTitle>📽️ 동영상 📽️</VideoTitle>
-      </VideoHeader>
-      <VideoMain>
+    <div>
+      <div className={styles.video_header}>
+        <span className={styles.video_header__title}>📽️ 동영상 📽️</span>
+      </div>
+      <div className={styles.video_main}>
         {result.map((info, i) => {
           return (
-            <VideoData key={i}>
-              <VideoUrl href={info.url} target="__blank">
-                <VideoImg src={info.thumbnail} />
-                <VideoContentsTitle>{info.title}</VideoContentsTitle>
-                <VideoAuthor>👤 {info.author}</VideoAuthor>
-              </VideoUrl>
-            </VideoData>
+            <div key={i} className={styles.video_contents}>
+              <a href={info.url} target="__blank" className={styles.video_link}>
+                <img src={info.thumbnail} className={styles.video_link__img} />
+                <p className={styles.video_link__title}>{info.title}</p>
+                <div className={styles.video_link__identity}>👤 {info.author}</div>
+              </a>
+            </div>
           );
         })}
-      </VideoMain>
-    </>
+      </div>
+    </div>
   );
 };
 
