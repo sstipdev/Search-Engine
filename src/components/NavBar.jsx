@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { signOut, getAuth, deleteUser } from "firebase/auth";
 import { AiFillSetting } from "react-icons/ai";
 import UpdateProfile from "./UpdateProfile.jsx";

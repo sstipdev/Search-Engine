@@ -56,7 +56,7 @@ const Login = () => {
     <div className={styles.login_wrap}>
       <div className={styles.header}>
         <img src={Logo} className={styles.header__img} />
-        <h2 className={styles.header__title}>사이트</h2>
+        <h2 className={styles.header__title}>어서 오시게 헥헥</h2>
       </div>
 
       <form onSubmit={onSubmitAccount} className={styles.login_form}>
