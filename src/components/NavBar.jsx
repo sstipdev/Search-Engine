@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { signOut, getAuth, deleteUser } from "firebase/auth";
 import { AiFillSetting } from "react-icons/ai";
 import UpdateProfile from "./UpdateProfile.jsx";
@@ -50,7 +50,7 @@ const NavBar = () => {
         {nav && (
           <div className={styles.navbar_info}>
             <div className={styles.navbar_text}>
-              <span className={styles.navbar_identity__username}>{user.displayName}</span>
+              <span className={styles.navbar_identity__username}>{user.displayName ? user.displayName : "익명"}</span>
               <span className={styles.navbar_identity__welcome__text}>님 반갑습니다</span>
             </div>
 
