@@ -1,14 +1,14 @@
 import { AiOutlineCheck } from "react-icons/ai";
 import styles from "../styles/components/WebResult.module.css";
 
-const WebResult = ({ result }) => {
+const WebResult = (props) => {
   return (
     <div>
       <div className={styles.web_header}>
         <span className={styles.web_header__title}>🌐 웹 🌐</span>
       </div>
       <div className={styles.web_main}>
-        {result.map((info, i) => {
+        {props.result.map((info, i) => {
           return (
             <div key={i} className={styles.web_contents}>
               <div dangerouslySetInnerHTML={{ __html: info.contents }} className={styles.web_contents__desc}></div>

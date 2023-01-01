@@ -6,7 +6,7 @@ import BlogResult from "../components/BlogResult";
 import NavBar from "../components/NavBar";
 import styles from "../styles/routes/Home.module.css";
 
-const Home = () => {
+const Home = (props) => {
   const [choice, setChoice] = useState("");
   const [search, setSearch] = useState("");
   const [result, setResult] = useState();
@@ -28,7 +28,6 @@ const Home = () => {
     const json = await data.json();
 
     // 변환된 JSON 객체를 State함수에 저장.
-    console.log(result);
     return setResult(json.documents);
   };
 
