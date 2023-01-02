@@ -37,22 +37,19 @@ const _IsModalActivated = atom({
 
 export const IsModalActivated = selector({
   key: "is-modal-activated",
-  get: ({ get }) => {
-    const _value = get(_IsModalActivated);
-    return _value ? 100 : 0;
-  },
+  get: ({ get }) => get(_IsModalActivated),
   set: ({ set, get, reset }, newValue) => {
     // 검증단계
-    if (newValue instanceof DefaultValue) throw new Error(`기본값이야.`);
-    if (newValue instanceof Array && newValue.length === 0) throw new Error(`빈 배열이야 임마`);
+    // if (newValue instanceof DefaultValue) throw new Error(`기본값이야.`);
+    // if (newValue instanceof Array && newValue.length === 0) throw new Error(`빈 배열이야 임마`);
     if (!(typeof newValue === "boolean")) throw new Error(`boolean 외 사절.`);
 
     // setter
     set(_IsModalActivated, newValue);
     // getter
-    get(_IsModalActivated);
+    // get(_IsModalActivated);
     // reset
-    reset(_IsModalActivated);
+    // reset(_IsModalActivated);
   },
 });
 

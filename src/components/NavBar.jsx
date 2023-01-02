@@ -12,13 +12,13 @@ import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
-  // const [isModalActviated, setIsModalActivated] = useRecoilState(IsModalActivated);
+  const [isModalActviated, setIsModalActivated] = useRecoilState(IsModalActivated);
 
   // getter는 state의 값만 필요로 할때, state의 값은 업데이트할수 없음
-  const isModalActivated = useRecoilValue(IsModalActivated);
+  // const isModalActivated = useRecoilValue(IsModalActivated);
 
   // setter는 state의 값을 업데이트 할수 있음
-  const setIsModalActivated = useSetRecoilState(IsModalActivated);
+  // const setIsModalActivated = useSetRecoilState(IsModalActivated);
 
   const path = useNavigate();
   const auth = getAuth();
