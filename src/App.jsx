@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Login from "./routes/Login";
 import NotPage from "./routes/NotPage";
 import Loading from "./components/Loading";
+import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from "recoil";
 
 import { useEffect, useState } from "react";
 
@@ -33,21 +34,23 @@ function App() {
   if (loading) return <Loading />;
 
   return (
-    <div className="App">
-      {login ? (
-        <Routes>
-          <Route path="/main" element={<Home />} />
-          <Route path="/main/*" element={<NotPage />} />
-          <Route path="/*" element={<NotPage />} />
-        </Routes>
-      ) : (
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/*" element={<NotPage />} />
-        </Routes>
-      )}
-    </div>
+    <RecoilRoot>
+      <div className="App">
+        {login ? (
+          <Routes>
+            <Route path="/main" element={<Home />} />
+            <Route path="/main/*" element={<NotPage />} />
+            <Route path="/*" element={<NotPage />} />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/*" element={<NotPage />} />
+          </Routes>
+        )}
+      </div>
+    </RecoilRoot>
   );
 }
 
