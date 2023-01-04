@@ -12,8 +12,10 @@ const UpdateProfile = () => {
   const [newUserName, setNewUserName] = useState("");
   const [error, setError] = useState("");
 
+  /** 프로필 업데이트 모달창 열기 or 닫기 state 변경 함수 */
   const handleCloseModal = () => setIsModalActivated(false);
 
+  /** input value 값 얻어오기 8글자 제한 */
   const getNewUserNameValue = (e) => {
     const {
       target: { value },
@@ -21,6 +23,7 @@ const UpdateProfile = () => {
     value.length > 8 ? setError("닉네임 길이수 초과 8글자 이내로 작성 해주세요") : setNewUserName(value);
   };
 
+  /** 프로필(닉네임) 변경 기능 함수 호출 */
   const handleSetNewUserName = async () => {
     if (currentUserName === newUserName) return setError("기존 닉네임과 동일 합니다.");
     if (newUserName === "") return setError("공백 닉네임은 금지 입니다.");
