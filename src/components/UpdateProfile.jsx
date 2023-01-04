@@ -1,16 +1,18 @@
 import styles from "../styles/components/UpdateProfile.module.css";
 
 import { useState } from "react";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { IsModalActivated } from "../store";
 import { getAuth, updateProfile } from "firebase/auth";
 
 const UpdateProfile = () => {
   const auth = getAuth();
-  const [isModalActviated, setIsModalActivated] = useRecoilState(IsModalActivated);
   const [currentUserName, setCurrentUserName] = useState(auth.currentUser.displayName);
   const [newUserName, setNewUserName] = useState("");
   const [error, setError] = useState("");
+
+  /** IsModalActivated State 변경함수 */
+  const setIsModalActivated = useSetRecoilState(IsModalActivated);
 
   /** 프로필 업데이트 모달창 열기 or 닫기 state 변경 함수 */
   const handleCloseModal = () => setIsModalActivated(false);
