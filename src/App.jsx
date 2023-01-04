@@ -20,28 +20,19 @@ function App() {
 
   useEffect(() => {
     // 경로 검증 -> 로그인 여부 확인
-
-    /** path 유효성 */
-    const pathValidity = ["/main", "/login"].includes(location.pathname);
-
-    // console.log(`location.pathname:`, location.pathname);
-    // console.log(`pathValidity:`, pathValidity);
-
-    // 로그인이 되었는지 여부 체크
-    pathValidity &&
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          // navigate("/main");
-          // 로그인이 되었다면 state 함수 true로 업뎃
-          setLogin(true);
-          // 로그인이 되었을경우 main 컴포넌트로 이동.
-        } else {
-          // 아니면 false로 업뎃
-          setLogin(false);
-          // 로그인이 안되었을 경우 / 로그인 페이지로 이동
-        }
-        setLoading(false);
-      });
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/main");
+        // 로그인이 되었다면 state 함수 true로 업뎃
+        setLogin(true);
+        // 로그인이 되었을경우 main 컴포넌트로 이동.
+      } else {
+        // 아니면 false로 업뎃
+        setLogin(false);
+        // 로그인이 안되었을 경우 / 로그인 페이지로 이동
+      }
+      setLoading(false);
+    });
   });
 
   if (loading) return <Loading />;
@@ -49,12 +40,7 @@ function App() {
   return (
     <RecoilRoot>
       <div className="App">
-        <Routes>
-          <Route path="/main" element={<Home />} />
-          <Route path="/main/*" element={<NotPage />} />
-          <Route path="*" element={<NotPage />} />
-        </Routes>
-        {/* {login ? (
+        {login ? (
           <Routes>
             <Route path="/main" element={<Home />} />
             <Route path="/main/*" element={<NotPage />} />
@@ -66,7 +52,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotPage />} />
           </Routes>
-        )} */}
+        )}
       </div>
     </RecoilRoot>
   );

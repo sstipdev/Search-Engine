@@ -38,7 +38,7 @@ const NavBar = () => {
   };
 
   /** 닉네임 변경 함수 */
-  const handleUpdateProfile = () => console.log("1");
+  const handleUpdateProfile = () => setIsModalActivated(true);
 
   /** 회원탈퇴 함수 */
   const handleDeleteAccount = async () => {
@@ -55,6 +55,7 @@ const NavBar = () => {
 
   return (
     <div className={styles.navbar_wrap} id={nav ? styles.show : ""}>
+      {isModalActviated && <UpdateProfile />}
       <div className={styles.navbar_textbox}>
         <span onClick={showNavBarMenu}>
           {!nav && (
@@ -64,7 +65,7 @@ const NavBar = () => {
           )}
         </span>
       </div>
-      <div id={nav ? styles.showNavBar : ""}>
+      <div id={nav ? styles.showNavBar : styles.hideNavBar}>
         {nav && (
           <div className={styles.navbar_info}>
             <div className={styles.navbar_text}>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import WebResult from "../components/WebResult";
 import VideoResult from "../components/VideoResult";
 import ImageResult from "../components/ImageResult";

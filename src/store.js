@@ -21,37 +21,37 @@ import { atom, selector, DefaultValue } from "recoil";
  * - isModalActivated (is~~~)
  */
 
-// export const IsModalActivated = atom({
-//   /** 키 값, 식별자 */
-//   key: "IsModalActivated",
-//   /** 기본값 */
-//   default: false,
-// });
-
-// selector 예시
-// IsModalActivated에 필터 추가 (boolean만)
-const _IsModalActivated = atom({
-  key: "is-modal-activated-private",
+export const IsModalActivated = atom({
+  /** 키 값, 식별자 */
+  key: "IsModalActivated",
+  /** 기본값 */
   default: false,
 });
 
-export const IsModalActivated = selector({
-  key: "is-modal-activated",
-  get: ({ get }) => get(_IsModalActivated),
-  set: ({ set, get, reset }, newValue) => {
-    // 검증단계
-    // if (newValue instanceof DefaultValue) throw new Error(`기본값이야.`);
-    // if (newValue instanceof Array && newValue.length === 0) throw new Error(`빈 배열이야 임마`);
-    if (!(typeof newValue === "boolean")) throw new Error(`boolean 외 사절.`);
+// selector 예시
+// IsModalActivated에 필터 추가 (boolean만)
+// const _IsModalActivated = atom({
+//   key: "is-modal-activated-private",
+//   default: false,
+// });
 
-    // setter
-    set(_IsModalActivated, newValue);
-    // getter
-    // get(_IsModalActivated);
-    // reset
-    // reset(_IsModalActivated);
-  },
-});
+// export const IsModalActivated = selector({
+//   key: "is-modal-activated",
+//   get: ({ get }) => get(_IsModalActivated),
+//   set: ({ set, get, reset }, newValue) => {
+//     // 검증단계
+//     // if (newValue instanceof DefaultValue) throw new Error(`기본값이야.`);
+//     // if (newValue instanceof Array && newValue.length === 0) throw new Error(`빈 배열이야 임마`);
+//     if (!(typeof newValue === "boolean")) throw new Error(`boolean 외 사절.`);
+
+//     // setter
+//     set(_IsModalActivated, newValue);
+//     // getter
+//     // get(_IsModalActivated);
+//     // reset
+//     // reset(_IsModalActivated);
+//   },
+// });
 
 /**
  * getter 호출 -> 값 나옴.

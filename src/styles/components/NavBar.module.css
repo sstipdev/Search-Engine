@@ -9,6 +9,17 @@
   }
 }
 
+@keyframes fadeOutMenuLeft {
+  0% {
+    opacity: 1;
+    transform: translateZ(-5000);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
 @keyframes fadeInModalBottom {
   0% {
     opacity: 0;
@@ -63,10 +74,14 @@
 }
 
 #showNavBar {
-  width: 300px;
+  width: 400px;
   background-color: white;
   height: 100vh;
   animation: fadeInMenuLeft 0.5s;
+}
+
+#hideNavBar {
+  animation: fadeOutMenuLeft 10s;
 }
 
 .navbar_info {
