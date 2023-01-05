@@ -46,7 +46,7 @@ const NavBar = () => {
       if (window.confirm("정말로 계정을 삭제하실껀가요 ?")) {
         alert("배신자 ㅂ2");
         await deleteUser(user);
-        path("/login");
+        path("/");
       }
     } catch (error) {
       console.log(error);
