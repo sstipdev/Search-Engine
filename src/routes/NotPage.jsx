@@ -6,7 +6,7 @@ const NotPage = () => {
     <div className={styles.page_error_wrap}>
       <div className={styles.page_error_code}>404</div>
       <div className={styles.page_error_desc}>현재 접속하신 주소는 올바른 주소가 아닙니다.</div>
-      <Link to="/login" className={styles.page_error_link}>
+      <Link to="/" className={styles.page_error_link}>
         홈으로
       </Link>
     </div>
