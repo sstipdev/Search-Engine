@@ -1,5 +1,5 @@
 import Home from "./routes/Home";
-import { Routes, Route, useNavigate, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Login from "./routes/Login";
 import NotPage from "./routes/NotPage";
 import Loading from "./components/Loading";
@@ -16,13 +16,11 @@ import { auth } from "./Auth";
 function App() {
   const [login, setLogin] = useState(false);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     // 경로 검증 -> 로그인 여부 확인
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        navigate("/main");
         // 로그인이 되었다면 state 함수 true로 업뎃
         setLogin(true);
         // 로그인이 되었을경우 main 컴포넌트로 이동.
@@ -42,14 +40,12 @@ function App() {
       <div className="App">
         {login ? (
           <Routes>
-            <Route path="/main" element={<Home />} />
-            <Route path="/main/*" element={<NotPage />} />
+            <Route path="/" element={<Home />} />
             <Route path="*" element={<NotPage />} />
           </Routes>
         ) : (
           <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotPage />} />
           </Routes>
         )}
